@@ -1,0 +1,67 @@
+.coinList{
+    width: 25%;
+    height:100vh;
+    border-left: 1px solid #ddd;
+    cursor: default;
+    user-select: none;
+}
+.bold{
+    font-weight: bold;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+th{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #ddd;
+    font-size: 0.7rem;
+}
+td {
+    padding: 10px;
+    text-align: center; 
+    vertical-align: middle; 
+    border-bottom: 1px solid #ddd; 
+    white-space: nowrap;
+    font-size: 0.9rem;
+}
+
+th.coinName {
+    width: 30%;
+}
+
+th.currentPrice{
+    width: 20%;
+}
+
+th.changeRate {
+    width: 20%;
+}
+
+th.transactionVolume{
+    width: 30%;
+}
+
+.twoDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.twoDiv_two{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.coinName_korean{
+    font-weight: bold;
+}
+.coinIncrease {
+    color: red; /* 상승 상태를 나타내는 색상 */
+}
+
+.coinDecrease {
+    color: blue; /* 하락 상태를 나타내는 색상 */
+}
