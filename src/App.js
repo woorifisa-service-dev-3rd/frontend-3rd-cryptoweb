@@ -2,7 +2,7 @@ import './App.css';
 import CoinList from './components/CoinList';
 import Header from './components/Header';
 import MainBody from './components/MainBody';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
       // 구독 메시지 전송
       const subscriptionMessage = [
         { ticket: "unique_ticket_id" },
-        { type: "ticker", codes: ["KRW-BTC", "KRW-ETH","KRW-BCH"], isOnlyRealtime: true }
+        { type: "ticker", codes: ["KRW-BCH"], isOnlyRealtime: true }
       ];
       _socket.send(JSON.stringify(subscriptionMessage));
     };
@@ -31,8 +31,9 @@ function App() {
         const message = JSON.parse(reader.result);
         console.log('Message from server', message);
 
+
         // 여기서 필요한 데이터 state에 update
-        setPrice(parseFloat(message.acc_ask_volume.toFixed(4)))
+        setPrice(message.prev_closing_price)
         setName(message.code)
         
         
@@ -60,7 +61,7 @@ function App() {
     <div className="App">
       <Header />
       <MainBody />
-      <CoinList />
+      <CoinList price={price} name={name} />
     </div>
   );
 }

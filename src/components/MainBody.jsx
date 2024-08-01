@@ -1,11 +1,13 @@
 import '../css/MainBody.css';
+import CoinChart from './CoinChart';
+import MainHeader from './MainHeader';
 
 const MainBody = () => {
   
   return (
     <div className='main'>
-      WebSocket 데이터를 수신 중입니다.
-      
+      <MainHeader />
+      <CoinChart />
     </div>
   );
 };
