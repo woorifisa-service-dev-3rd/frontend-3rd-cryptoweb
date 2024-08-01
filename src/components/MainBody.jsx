@@ -1,5 +1,6 @@
 import '../css/MainBody.css';
-import CoinChart from './CoinChart';
+import CandleVolumeChart from './CandleChart';
+import CoinChart from './CoinChart'
 import MainHeader from './MainHeader';
 
 const MainBody = () => {
