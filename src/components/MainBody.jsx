@@ -1,15 +1,15 @@
-import React from 'react'
-import '../css/MainBody.css'
-import CandleChart from './CandleChart'
-import CandleVolumeChart from './CandleChart'
-// import WebSocketComponent from './WebSocket'
+import '../css/MainBody.css';
+import CoinChart from './CoinChart';
+import MainHeader from './MainHeader';
 
 const MainBody = () => {
+  
   return (
     <div className='main'>
-      <CandleVolumeChart />
+      <MainHeader />
+      <CoinChart />
     </div>
-  )
-}
+  );
+};
 
-export default MainBody
+export default MainBody;
