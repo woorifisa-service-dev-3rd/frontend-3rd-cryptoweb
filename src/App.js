@@ -37,17 +37,7 @@ function App() {
 
         // 여기 아래부터 다 지워도됨
         
-        console.log(message.opening_price)
-        setOpenPrice(message.opening_price)
-
-        console.log(message.high_price)
-        setHighPrice(message.high_price)
-
-        setLowPrice(message.low_price)
-        setCurrentPrice(message.trade_price)
-
-        console.log("openPrice", openPrice)
-        console.log("highPirce", highPrice)
+      
         
       
       };

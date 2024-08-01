@@ -2,7 +2,7 @@ import { useState } from "react"
 import "../css/CoinChart.css"
 import CandleVolumeChart from "./CandleVolumeChart"
 
-const CoinChart = ({ openPrice, highPrice, lowPrice, currentPrice }) => {
+const CoinChart = () => {
   const [volume, setVolume] = useState(true);
 
   return (
@@ -25,7 +25,7 @@ const CoinChart = ({ openPrice, highPrice, lowPrice, currentPrice }) => {
           </div>
           <button onClick={() => setVolume(!volume)}>{volume ? "숨기기" : "보이기"}</button>
         </div>
-        <CandleVolumeChart volume={volume} openPrice={openPrice} highPrice={highPrice} lowPrice={lowPrice} curretPrice={currentPrice}/>
+        <CandleVolumeChart volume={volume} />
       </div>
     </>
   )
