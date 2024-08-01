@@ -1,14 +1,13 @@
 import '../css/MainBody.css';
-import CandleVolumeChart from './CandleChart';
 import CoinChart from './CoinChart'
 import MainHeader from './MainHeader';
 
-const MainBody = () => {
+const MainBody = ({ openPrice, highPrice, lowPrice, currentPrice }) => {
   
   return (
     <div className='main'>
       <MainHeader />
-      <CoinChart />
+      <CoinChart openPrice={openPrice} highPrice={highPrice} lowPrice={lowPrice} curretPrice={currentPrice}/>
     </div>
   );
 };
