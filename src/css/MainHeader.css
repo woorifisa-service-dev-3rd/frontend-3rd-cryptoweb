@@ -14,8 +14,9 @@
 }
 .custom_select{
     position: absolute;
-    width: 27%;
+    width: 35%;
     height: 100%;
+    text-wrap: nowrap;
 }
 .select_selected{
     width: 100%;
