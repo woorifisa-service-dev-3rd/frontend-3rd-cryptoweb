@@ -22,7 +22,7 @@ const CoinList = () => {
             <tbody>
                 <tr>
                     <td className='twoDiv'><div className='coinName_korean'>리플</div> <div>xrp/krw</div></td>
-                    <td className='price' className="coinIncrease bold">905.0</td>
+                    <td className='price'><div className="coinIncrease bold">905.0</div></td>
                     <td className='twoDiv_two'><div className="coinIncrease">+2.89%</div><span className='coinIncrease'>34.5</span></td>
                     <td className='transactionVolume'>433,474백만</td>
                 </tr>
