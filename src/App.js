@@ -85,8 +85,13 @@ function App({coinList}) {
     <div className="App">
       {/* 원하는 데이터 props로 전달 */}
       <Header />
+<<<<<<< HEAD
       <MainBody />
       <CoinList coinInfo={coinInfo} />
+=======
+      <MainBody openPrice={openPrice} highPrice={highPrice} lowPrice={lowPrice} currentPrice={currentPrice}/>
+      <CoinList price={currentPrice} name={lowPrice} />
+>>>>>>> main
     </div>
   );
 }
