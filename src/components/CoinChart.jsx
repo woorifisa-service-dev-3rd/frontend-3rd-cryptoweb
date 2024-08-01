@@ -8,8 +8,7 @@ const CoinChart = () => {
   return (
     <>
       <div className="coin_chart">
-        <p>여기가 CoinChart</p>
-        <div className="select_options">
+        <div className="chart_select_options">
           <div className="date_select">
             <select className="datetime" id="datetime">
               <option value="one_day">1일</option>

@@ -4,14 +4,14 @@
     border: 1px solid gray;
 }
 
-.select_options {
+.chart_select_options {
     display: flex;
     margin: 10px;
     justify-content: flex-start;
     align-items: center;
 }
 
-.select_options >* {
+.chart_select_options >* {
     margin-right: 10px;
     height: 25px;
 }
