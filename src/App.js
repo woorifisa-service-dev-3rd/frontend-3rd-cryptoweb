@@ -5,12 +5,15 @@ import MainBody from './components/MainBody';
 import { useEffect, useRef, useState } from 'react';
 
 
-function App() {
+function App({coinList}) {
+
+
   const socket = useRef(null)
-  const [openPrice, setOpenPrice] = useState("")
-  const [highPrice, setHighPrice] = useState("")
-  const [lowPrice, setLowPrice] = useState("")
-  const [curretPrice, setCurrentPrice] = useState("")
+  // const [openPrice, setOpenPrice] = useState("")
+  // const [highPrice, setHighPrice] = useState("")
+  // const [lowPrice, setLowPrice] = useState("")
+  // const [curretPrice, setCurrentPrice] = useState("")
+  const [coinInfo, setcoinInfo] = useState()
 
   useEffect(() => {
     const _socket = new WebSocket('wss://api.upbit.com/websocket/v1');
@@ -19,10 +22,11 @@ function App() {
     _socket.onopen = () => {
       console.log('WebSocket connection established');
 
+
       // 구독 메시지 전송
       const subscriptionMessage = [
         { ticket: "unique_ticket_id" },
-        { type: "ticker", codes: ["KRW-BCH"], isOnlyRealtime: true }
+        { type: "ticker", codes: coinList, isOnlyRealtime: true }
       ];
       _socket.send(JSON.stringify(subscriptionMessage));
     };
@@ -37,17 +41,19 @@ function App() {
 
         // 여기 아래부터 다 지워도됨
         
-        console.log(message.opening_price)
-        setOpenPrice(message.opening_price)
+        // console.log(message.opening_price)
+        // setOpenPrice(message.opening_price)
 
-        console.log(message.high_price)
-        setHighPrice(message.high_price)
+        // console.log(message.high_price)
+        // setHighPrice(message.high_price)
 
-        setLowPrice(message.low_price)
-        setCurrentPrice(message.trade_price)
+        // setLowPrice(message.low_price)
+        // setCurrentPrice(message.trade_price)
 
-        console.log("openPrice", openPrice)
-        console.log("highPirce", highPrice)
+        // console.log("openPrice", openPrice)
+        // console.log("highPirce", highPrice)
+
+        setcoinInfo(message)
         
       
       };
@@ -55,7 +61,7 @@ function App() {
     };
 
     _socket.onerror = (error) => {
-      console.error('WebSocket error:', error);
+      console.error('WebSocket error:', error.message);
     };
 
     _socket.onclose = () => {
@@ -66,7 +72,7 @@ function App() {
     return () => {
       _socket.close();
     };
-  }, []);
+  }, [coinList]);
 
  
   return (
@@ -74,7 +80,7 @@ function App() {
       {/* 원하는 데이터 props로 전달 */}
       <Header />
       <MainBody />
-      <CoinList price={curretPrice} name={lowPrice} />
+      <CoinList coinInfo={coinInfo} />
     </div>
   );
 }
