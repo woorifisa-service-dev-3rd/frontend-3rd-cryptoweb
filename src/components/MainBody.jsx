@@ -4,12 +4,11 @@ import CoinChart from './CoinChart'
 import MainHeader from './MainHeader';
 
 const MainBody = () => {
-  const [selectedCoin, setSelectedCoin] = useState("KRW-BTC");
-
+  const [coinname, usecoinname] = useState('KRW-BTC')
   return (
     <div className='main'>
-      <MainHeader onSelectcoin={setSelectedCoin}/>
-      <CoinChart selectedCoin={selectedCoin}/>
+      <MainHeader usecoinname={usecoinname} />
+      <CoinChart coinname={coinname}/>
     </div>
   );
 };
