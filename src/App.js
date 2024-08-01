@@ -15,6 +15,8 @@ function App({coinList}) {
 
   const [isInitialMount, setIsInitialMount] = useState(true); //최초 랜더링 막아버리기
 
+  
+
   useEffect(() => {
     if (isInitialMount) {
       setIsInitialMount(false);
