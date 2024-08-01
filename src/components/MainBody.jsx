@@ -7,7 +7,7 @@ const MainBody = ({ openPrice, highPrice, lowPrice, currentPrice }) => {
   return (
     <div className='main'>
       <MainHeader />
-      <CoinChart openPrice={openPrice} highPrice={highPrice} lowPrice={lowPrice} curretPrice={currentPrice}/>
+      {/* <CoinChart openPrice={openPrice} highPrice={highPrice} lowPrice={lowPrice} curretPrice={currentPrice}/> */}
     </div>
   );
 };

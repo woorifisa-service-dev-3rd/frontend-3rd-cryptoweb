@@ -15,7 +15,7 @@ function App({coinList}) {
   // const [curretPrice, setCurrentPrice] = useState("")
   const [coinInfo, setcoinInfo] = useState()
 
-  const [isInitialMount, setIsInitialMount] = useState(true); // 추가: 초기 마운트 상태를 추적하는 상태
+  const [isInitialMount, setIsInitialMount] = useState(true); //최초 랜더링 막아버리기
 
   useEffect(() => {
     if (isInitialMount) {
@@ -85,13 +85,8 @@ function App({coinList}) {
     <div className="App">
       {/* 원하는 데이터 props로 전달 */}
       <Header />
-<<<<<<< HEAD
       <MainBody />
       <CoinList coinInfo={coinInfo} />
-=======
-      <MainBody openPrice={openPrice} highPrice={highPrice} lowPrice={lowPrice} currentPrice={currentPrice}/>
-      <CoinList price={currentPrice} name={lowPrice} />
->>>>>>> main
     </div>
   );
 }
