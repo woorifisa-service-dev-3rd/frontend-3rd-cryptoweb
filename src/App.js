@@ -10,7 +10,7 @@ function App() {
   const [openPrice, setOpenPrice] = useState("")
   const [highPrice, setHighPrice] = useState("")
   const [lowPrice, setLowPrice] = useState("")
-  const [curretPrice, setCurrentPrice] = useState("")
+  const [currentPrice, setCurrentPrice] = useState("")
 
   useEffect(() => {
     const _socket = new WebSocket('wss://api.upbit.com/websocket/v1');
@@ -73,8 +73,8 @@ function App() {
     <div className="App">
       {/* 원하는 데이터 props로 전달 */}
       <Header />
-      <MainBody />
-      <CoinList price={curretPrice} name={lowPrice} />
+      <MainBody openPrice={openPrice} highPrice={highPrice} lowPrice={lowPrice} currentPrice={currentPrice}/>
+      <CoinList price={currentPrice} name={lowPrice} />
     </div>
   );
 }
