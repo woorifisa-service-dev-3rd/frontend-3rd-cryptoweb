@@ -7,12 +7,10 @@ import { useEffect, useRef, useState } from 'react';
 
 function App({coinList}) {
 
+  console.log("App에 있는 coinList!!!!",coinList)
+
 
   const socket = useRef(null)
-  // const [openPrice, setOpenPrice] = useState("")
-  // const [highPrice, setHighPrice] = useState("")
-  // const [lowPrice, setLowPrice] = useState("")
-  // const [curretPrice, setCurrentPrice] = useState("")
   const [coinInfo, setcoinInfo] = useState()
 
   const [isInitialMount, setIsInitialMount] = useState(true); //최초 랜더링 막아버리기
@@ -46,23 +44,9 @@ function App({coinList}) {
         console.log('Message from server', message);
         
         // 여기서 필요한 데이터 state에 update
-
-        // 여기 아래부터 다 지워도됨
-        
-        // console.log(message.opening_price)
-        // setOpenPrice(message.opening_price)
-
-        // console.log(message.high_price)
-        // setHighPrice(message.high_price)
-
-        // setLowPrice(message.low_price)
-        // setCurrentPrice(message.trade_price)
-
-        // console.log("openPrice", openPrice)
-        // console.log("highPirce", highPrice)
-
         setcoinInfo(message)
-        
+
+      
       
       };
       reader.readAsText(event.data);
@@ -87,6 +71,7 @@ function App({coinList}) {
     <div className="App">
       {/* 원하는 데이터 props로 전달 */}
       <Header />
+    
       <MainBody />
       <CoinList coinInfo={coinInfo} />
     </div>

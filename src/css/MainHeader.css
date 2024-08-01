@@ -1,5 +1,47 @@
+
 .main_header{
     flex: 0 0 20%; 
     width: 100%;   
     border: 1px solid gray;
+    position: relative;
+}
+.custom_select_container{
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    top: 0;
+    border-bottom: 1px solid gray;
+}
+.custom_select{
+    position: absolute;
+    width: 35%;
+    height: 100%;
+    text-wrap: nowrap;
+}
+.select_selected{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.coinImg{
+    flex: 0 0 20%;
+    /* max-width: 100%; */
+    height:100%;
+}
+
+.coin_name_kr{
+    flex:1;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}
+.coin_name_en{
+    flex-direction: 1;
+    text-align: center;
+}
+.down_icon{
+    font-size: 18px;
+    flex: 0 0 10%;
+    margin-left: 5px;
 }
