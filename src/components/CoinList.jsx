@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import '../css/CoinList.css'
+import {marketToKoreanName} from '../constant/CoinKoreanName'
 
 const CoinList = ({coinInfo}) => {
 
@@ -47,17 +48,20 @@ const CoinList = ({coinInfo}) => {
                     {coinInfoList.map((info) =>(
                         <tr key = {info.code}>
                         <td className='twoDiv'>
-                                <div className='coinName_korean'>{info.code}</div><div>xrp/krw</div></td>
-                        <td className='price' className="coinIncrease bold">{info.trade_price}</td>
+                                <div className='coinName_korean'>
+                                {marketToKoreanName[info.code] ? marketToKoreanName[info.code] : info.code}</div><div>{info.code}</div></td>
+                        <td className='price bold'>
+                            {info.trade_price}</td>
                         <td className='twoDiv_two'>
-                            <div className="coinIncrease">
-                                {info.change_rate}
+                            <div className={`coinIncrease ${info.change === "FALL" ? 'coinDecrease' : 'coinIncrease'}`}>
+                            {info.change ==="FALL"? -(info.change_rate*100).toFixed(3)+"%" : info.change_rate.toFixed(3)+"%"}
                                 </div>
-                            <span className='coinIncrease'>
-                                {info.change_price}
+                            <span className={`coinIncrease ${info.change === "FALL" ? 'coinDecrease' : 'coinIncrease'}`}>
+                            {info.change ==="FALL"? -(info.change_price).toFixed(3) : info.change_price.toFixed(3)}
                                 </span>
                         </td>
-                        <td className='transactionVolume'>{info.acc_trade_volume}</td>
+                        <td className='transactionVolume'>
+                            {info.acc_trade_price_24h/1000000 > 1 ?(info.acc_trade_price_24h/1000000).toFixed(3)+"백만" : info.acc_trade_price_24h.toFixed(3)}</td>
                         </tr>
 
                     ))}

@@ -15,7 +15,13 @@ function App({coinList}) {
   // const [curretPrice, setCurrentPrice] = useState("")
   const [coinInfo, setcoinInfo] = useState()
 
+  const [isInitialMount, setIsInitialMount] = useState(true); // 추가: 초기 마운트 상태를 추적하는 상태
+
   useEffect(() => {
+    if (isInitialMount) {
+      setIsInitialMount(false);
+      return; // 초기 마운트 시에는 더 이상 진행하지 않음
+    }
     const _socket = new WebSocket('wss://api.upbit.com/websocket/v1');
     socket.current = _socket;
 
@@ -62,7 +68,7 @@ function App({coinList}) {
 
     _socket.onerror = (error) => {
       console.error('WebSocket error:', error.message);
-    };
+    };  
 
     _socket.onclose = () => {
       console.log('WebSocket connection closed');
