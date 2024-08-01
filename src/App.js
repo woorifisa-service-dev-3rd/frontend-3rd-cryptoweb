@@ -5,26 +5,34 @@ import MainBody from './components/MainBody';
 import { useEffect, useRef, useState } from 'react';
 
 
-function App() {
+function App({coinList}) {
+
+  console.log("App에 있는 coinList!!!!",coinList)
+
+
   const socket = useRef(null)
-  const [openPrice, setOpenPrice] = useState("")
-  const [highPrice, setHighPrice] = useState("")
-  const [lowPrice, setLowPrice] = useState("")
-  const [currentPrice, setCurrentPrice] = useState("")
+  const [coinInfo, setcoinInfo] = useState()
+
+  const [isInitialMount, setIsInitialMount] = useState(true); //최초 랜더링 막아버리기
 
   
 
   useEffect(() => {
+    if (isInitialMount) {
+      setIsInitialMount(false);
+      return; // 초기 마운트 시에는 더 이상 진행하지 않음
+    }
     const _socket = new WebSocket('wss://api.upbit.com/websocket/v1');
     socket.current = _socket;
 
     _socket.onopen = () => {
       console.log('WebSocket connection established');
 
+
       // 구독 메시지 전송
       const subscriptionMessage = [
         { ticket: "unique_ticket_id" },
-        { type: "ticker", codes: ["KRW-BCH"], isOnlyRealtime: true }
+        { type: "ticker", codes: coinList, isOnlyRealtime: true }
       ];
       _socket.send(JSON.stringify(subscriptionMessage));
     };
@@ -36,29 +44,17 @@ function App() {
         console.log('Message from server', message);
         
         // 여기서 필요한 데이터 state에 update
+        setcoinInfo(message)
 
-        // 여기 아래부터 다 지워도됨
-        
-        console.log(message.opening_price)
-        setOpenPrice(message.opening_price)
-
-        console.log(message.high_price)
-        setHighPrice(message.high_price)
-
-        setLowPrice(message.low_price)
-        setCurrentPrice(message.trade_price)
-
-        console.log("openPrice", openPrice)
-        console.log("highPirce", highPrice)
-        
+      
       
       };
       reader.readAsText(event.data);
     };
 
     _socket.onerror = (error) => {
-      console.error('WebSocket error:', error);
-    };
+      console.error('WebSocket error:', error.message);
+    };  
 
     _socket.onclose = () => {
       console.log('WebSocket connection closed');
@@ -68,15 +64,16 @@ function App() {
     return () => {
       _socket.close();
     };
-  }, []);
+  }, [coinList]);
 
  
   return (
     <div className="App">
       {/* 원하는 데이터 props로 전달 */}
       <Header />
-      <MainBody/>
-      <CoinList price={currentPrice} name={lowPrice} />
+    
+      <MainBody />
+      <CoinList coinInfo={coinInfo} />
     </div>
   );
 }

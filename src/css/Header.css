@@ -1,9 +1,44 @@
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
 .header{
+    font-family: 'TheJamsil5Bold';
     position: fixed;
     top: 0;
     left: 0;
     width: 15%;
     height: 100vh;
-    background-color: #f4f4f4;
+    background-color: #003597;
     text-align: center;
+    color: white;
+}
+.name{
+    padding: 20px;
+    text-align: left;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.navBar{
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+    height: 60%;
+    
+}
+.nav{
+    font-family: 'LINESeedKR-Bd'; 
+    font-weight: 500;
+    padding-left: 20px;
+    text-align: left;
+   
 }
