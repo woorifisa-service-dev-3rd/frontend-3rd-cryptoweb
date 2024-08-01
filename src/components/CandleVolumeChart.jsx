@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Chart from 'react-apexcharts';
 
-const CandleVolumeChart = ({ volume, candleData }) => {
+const CandleVolumeChart = ({ volume }) => {
   // API로부터 가져온 데이터를 저장할 상태
   const [candleChartData, setCandleChartData] = useState([]);
   const [volumeData, setVolumeData] = useState([]);
@@ -10,7 +10,7 @@ const CandleVolumeChart = ({ volume, candleData }) => {
     // API로부터 데이터를 가져오는 함수
     const fetchData = async () => {
       try {
-        const response = await fetch('https://api.upbit.com/v1/candles/days?market=KRW-BCH&count=50', {
+        const response = await fetch('https://api.upbit.com/v1/candles/days?market=KRW-BCH&count=100', {
           method: 'GET',
           headers: { accept: 'application/json' },
         });
@@ -47,6 +47,54 @@ const CandleVolumeChart = ({ volume, candleData }) => {
   // 거래량 데이터의 시작과 끝 범위를 xaxis에 사용
   const minX = new Date(volumeData[0].x);
   const maxX = new Date(volumeData[volumeData.length - 1].x);
+
+  const lineOptions = {
+    series: [{
+      name: 'Sales',
+      data: [4, 3, 10, 9, 29, 19, 22, 9, 12, 7, 19, 5, 13, 9, 17, 2, 7, 5]
+    }],
+      chart: {
+      height: 350,
+      type: 'line',
+    },
+    forecastDataPoints: {
+      count: 7
+    },
+    stroke: {
+      width: 5,
+      curve: 'smooth'
+    },
+    xaxis: {
+      type: 'datetime',
+      categories: ['1/11/2000', '2/11/2000', '3/11/2000', '4/11/2000', '5/11/2000', '6/11/2000', '7/11/2000', '8/11/2000', '9/11/2000', '10/11/2000', '11/11/2000', '12/11/2000', '1/11/2001', '2/11/2001', '3/11/2001','4/11/2001' ,'5/11/2001' ,'6/11/2001'],
+      tickAmount: 10,
+      labels: {
+        formatter: function(value, timestamp, opts) {
+          return opts.dateFormatter(new Date(timestamp), 'dd MMM')
+        }
+      }
+    },
+    title: {
+      text: 'Forecast',
+      align: 'left',
+      style: {
+        fontSize: "16px",
+        color: '#666'
+      }
+    },
+    fill: {
+      type: 'gradient',
+      gradient: {
+        shade: 'dark',
+        gradientToColors: [ '#FDD835'],
+        shadeIntensity: 1,
+        type: 'horizontal',
+        opacityFrom: 1,
+        opacityTo: 1,
+        stops: [0, 100, 100, 100]
+      },
+    }
+  }
 
   // 캔들스틱 차트 옵션
   const candleOptions = {

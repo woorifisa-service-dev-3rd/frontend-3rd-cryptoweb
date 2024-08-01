@@ -11,11 +11,11 @@
     align-items: center;
 }
 
-.select_options >* {
-    margin-right: 10px;
-    height: 25px;
-}
-
-.datetime, .chart {
-    height: 25px;
+.volume_btn {
+    margin-right: 15px;
+    width: 100px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 10px;
+    border-color: gray;
 }
