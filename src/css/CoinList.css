@@ -1,6 +1,8 @@
 .coinList{
     flex: 1;
-    height:100vh;
+    /* height: 100vh; */
+    max-height: 100vh;
+    overflow-y: auto; /* overflow면 드래그 되도록 */
     border-left: 1px solid #ddd;
     cursor: default;
     user-select: none;

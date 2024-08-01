@@ -68,10 +68,9 @@ function App({coinList}) {
   return (
     <div className="App">
       {/* 원하는 데이터 props로 전달 */}
-      <Header />
-    
+      <Header />  
       <MainBody />
-      <CoinList coinInfo={coinInfo} />
+      <CoinList className="list" coinInfo={coinInfo} />
     </div>
   );
 }
