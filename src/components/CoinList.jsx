@@ -32,8 +32,8 @@ const CoinList = ({coinInfo}) => {
             {/* <div className='search'>
                 <input placeholder='코인명/심볼검색'></input>
                 <div></div>
-            </div>
-             */}
+            </div> */}
+            
 
             <table >
                 <thead>
