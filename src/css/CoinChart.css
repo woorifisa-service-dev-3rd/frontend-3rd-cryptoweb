@@ -4,18 +4,18 @@
     border: 1px solid gray;
 }
 
-.select_options {
+.chart_select_options {
     display: flex;
     margin: 10px;
     justify-content: flex-start;
     align-items: center;
 }
 
-.volume_btn {
-    margin-right: 15px;
-    width: 100px;
-    height: 30px;
-    background-color: transparent;
-    border-radius: 10px;
-    border-color: gray;
+.chart_select_options >* {
+    margin-right: 10px;
+    height: 25px;
+}
+
+.datetime, .chart {
+    height: 25px;
 }
