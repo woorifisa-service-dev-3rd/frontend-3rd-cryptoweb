@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Chart from 'react-apexcharts';
 
-const CandleVolumeChart = ({ volume, candleData }) => {
+const CandleVolumeChart = ({ volume, selectedCoin }) => {
   // API로부터 가져온 데이터를 저장할 상태
   const [candleChartData, setCandleChartData] = useState([]);
   const [volumeData, setVolumeData] = useState([]);
@@ -10,7 +10,7 @@ const CandleVolumeChart = ({ volume, candleData }) => {
     // API로부터 데이터를 가져오는 함수
     const fetchData = async () => {
       try {
-        const response = await fetch('v1/candles/days?market=KRW-BCH&count=100', {
+        const response = await fetch('v1/candles/days?market=${selectedCoin}&count=100', {
           method: 'GET',
           headers: { accept: 'application/json' },
         });
