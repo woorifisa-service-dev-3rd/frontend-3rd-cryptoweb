@@ -7,7 +7,7 @@ CryptoWeb은 실시간으로 디지털 자산 거래소의 코인 가격을 가�
 <br>
 
 ### 프로젝트 시연 영상
-![GIFMaker_me](https://github.com/user-attachments/assets/db443322-5cba-495b-ac7a-480fc28cb774)
+![GIFMaker_me (1)](https://github.com/user-attachments/assets/d8349c72-454a-45c3-9c79-c47f611af788)
 
 
 <br>
@@ -34,9 +34,16 @@ CryptoWeb은 실시간으로 디지털 자산 거래소의 코인 가격을 가�
 
 ### 팀원 구성
 
-류혜리
-이현아
-임지혁
+<table>
+  <tr>
+    <td height="140px" align="center"> <a href="https://github.com/hyeri1126"> <img src="https://avatars.githubusercontent.com/u/114209093?v=4" width="140px" />
+      <br /> 류혜리</a></td>
+    <td height="140px" align="center"> <a href="https://github.com/gusdk19"> <img src="https://avatars.githubusercontent.com/u/128590006?v=4" width="140px" />
+      <br /> 이현아</a></td>
+    <td height="140px" align="center"> <a href="https://github.com/jihyuk0414"> <img src="https://avatars.githubusercontent.com/u/123541776?v=4" width="140px" />
+      <br /> 임지혁</a></td>
+  </tr>
+</table>
 
 <br>
 
