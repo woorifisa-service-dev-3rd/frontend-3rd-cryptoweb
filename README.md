@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+### 프로젝트명
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**CryptoWeb**
 
-## Available Scripts
+CryptoWeb은 실시간으로 디지털 자산 거래소의 코인 가격을 가져와 변동성을 확인하고, 한 눈에 그래프로 확인할 수 있는 웹 애플리케이션입니다.
 
-In the project directory, you can run:
+<br>
 
-### `npm start`
+### 프로젝트 시연 영상
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[cryptoweb_video.mp4](https://prod-files-secure.s3.us-west-2.amazonaws.com/293ea4a4-94ef-4e36-9167-2fbb1a1c9273/d7a7e15e-097c-45a4-9fc8-82f1970bbf5c/cryptoweb_video.mp4)
+<br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 주요 기능
 
-### `npm test`
+- 실시간 가격 추적
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+웹소켓을 이용하여 디지털 자산 거래소에서 실시간으로 코인 가격을 수집합니다.
 
-### `npm run build`
+- 변동성 분석
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+수집된 데이터를 바탕으로 암호화폐의 변동성을 계산하고 분석합니다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 차트 시각화
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+차트를 통해 코인 가격의 변동성을 직관적으로 확인할 수 있습니다.
 
-### `npm run eject`
+- 다양한 코인
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+여러 종류의 암호화폐를 선택하여 차트를 확인할 수 있습니다.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 팀원 구성
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<table>
+<tr>
+<td height="140px" align="center"> <a href="https://github.com/hyeri1126”> <img src="https://avatars.githubusercontent.com/u/64997303?v=4" width="140px" />
+<br /> 류혜리</a></td>
+<td height="140px" align="center"> <a href=”https://github.com/gusdk19”> <img src="https://avatars.githubusercontent.com/u/82851869?v=4" width="140px" />
+<br /> 이현아</a></td>
+<td height="140px" align="center"> <a href="https://github.com/jihyuk0414"> <img src="https://avatars.githubusercontent.com/u/128590006?v=4" width="140px" />
+<br /> 임지혁</a></td>
+</tr>
+</table>
 
-## Learn More
+<br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 사용 스택
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Front: `React`, `Node.js`
 
-### Code Splitting
+버전 및 이슈 관리: `Github`, `Github Issues`, `Github Project`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+협업 툴: `Notion`
 
-### Analyzing the Bundle Size
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 이용 방법
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+git clone https://github.com/woorifisa-service-dev-3rd/frontend-3rd-cryptoweb.git
