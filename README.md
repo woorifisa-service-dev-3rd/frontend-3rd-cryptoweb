@@ -7,8 +7,9 @@ CryptoWeb은 실시간으로 디지털 자산 거래소의 코인 가격을 가�
 <br>
 
 ### 프로젝트 시연 영상
+![GIFMaker_me](https://github.com/user-attachments/assets/db443322-5cba-495b-ac7a-480fc28cb774)
 
-[cryptoweb_video.mp4](https://prod-files-secure.s3.us-west-2.amazonaws.com/293ea4a4-94ef-4e36-9167-2fbb1a1c9273/d7a7e15e-097c-45a4-9fc8-82f1970bbf5c/cryptoweb_video.mp4)
+
 <br>
 
 ### 주요 기능
@@ -35,9 +36,9 @@ CryptoWeb은 실시간으로 디지털 자산 거래소의 코인 가격을 가�
 
 <table>
 <tr>
-<td height="140px" align="center"> <a href="https://github.com/hyeri1126”> <img src="https://avatars.githubusercontent.com/u/64997303?v=4" width="140px" />
+<td height="140px" align="center"> <a href="https://github.com/hyeri112"> <img src="https://avatars.githubusercontent.com/u/82851869?v=4" width="140px" />
 <br /> 류혜리</a></td>
-<td height="140px" align="center"> <a href=”https://github.com/gusdk19”> <img src="https://avatars.githubusercontent.com/u/82851869?v=4" width="140px" />
+<td height="140px" align="center"> <a href="https://github.com/gusdk19"> <img src="https://avatars.githubusercontent.com/u/82851869?v=4" width="140px" />
 <br /> 이현아</a></td>
 <td height="140px" align="center"> <a href="https://github.com/jihyuk0414"> <img src="https://avatars.githubusercontent.com/u/128590006?v=4" width="140px" />
 <br /> 임지혁</a></td>
