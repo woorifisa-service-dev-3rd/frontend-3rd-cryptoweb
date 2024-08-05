@@ -36,11 +36,11 @@ CryptoWeb은 실시간으로 디지털 자산 거래소의 코인 가격을 가�
 
 <table>
 <tr>
-<td height="140px" align="center"> <a href="https://github.com/hyeri112"> <img src="https://avatars.githubusercontent.com/u/82851869?v=4" width="140px" />
+<td height="140px" align="center"> <a href="https://github.com/hyeri112"> width="140px" />
 <br /> 류혜리</a></td>
-<td height="140px" align="center"> <a href="https://github.com/gusdk19"> <img src="https://avatars.githubusercontent.com/u/82851869?v=4" width="140px" />
+<td height="140px" align="center"> <a href="https://github.com/gusdk19"> width="140px" />
 <br /> 이현아</a></td>
-<td height="140px" align="center"> <a href="https://github.com/jihyuk0414"> <img src="https://avatars.githubusercontent.com/u/128590006?v=4" width="140px" />
+<td height="140px" align="center"> <a href="https://github.com/jihyuk0414"> width="140px" />
 <br /> 임지혁</a></td>
 </tr>
 </table>
