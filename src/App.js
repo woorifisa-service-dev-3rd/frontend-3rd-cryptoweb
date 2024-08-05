@@ -45,8 +45,6 @@ function App({coinList}) {
         
         // 여기서 필요한 데이터 state에 update
         setcoinInfo(message)
-
-      
       
       };
       reader.readAsText(event.data);
@@ -70,10 +68,9 @@ function App({coinList}) {
   return (
     <div className="App">
       {/* 원하는 데이터 props로 전달 */}
-      <Header />
-    
+      <Header />  
       <MainBody />
-      <CoinList coinInfo={coinInfo} />
+      <CoinList className="list" coinInfo={coinInfo} />
     </div>
   );
 }

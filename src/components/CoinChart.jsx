@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import "../css/CoinChart.css"
-import CandleVolumeChart from "./CandleVolumeChart"
+import CandleVolumeChart from "./CandleVolumeChart";
 
 const CoinChart = ({coinname}) => {
   const [volume, setVolume] = useState(true);

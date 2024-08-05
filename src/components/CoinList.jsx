@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import '../css/CoinList.css';
 import { marketToKoreanName } from '../constant/CoinKoreanName';
 
@@ -7,6 +7,7 @@ const CoinList = ({ coinInfo }) => {
   const [filteredCoinList, setFilteredCoinList] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [isFiltered, setIsFiltered] = useState(false);
+  const debounceTimeoutRef = useRef(null); // 타이머 ID를 저장할 ref
 
   useEffect(() => {
     if (!isFiltered && coinInfo) {
@@ -29,6 +30,42 @@ const CoinList = ({ coinInfo }) => {
     }
   }, [coinInfo, isFiltered]);
 
+  const searchChangeHandler = (e) => {
+    setSearchTerm(e.target.value); // 검색어 업데이트
+  };
+
+  // 검색어가 변경될 때마다 실행되는 useEffect
+  useEffect(() => {
+    // 이전 타이머가 있다면 제거
+    if (debounceTimeoutRef.current) {
+      clearTimeout(debounceTimeoutRef.current);
+    }
+
+    // 새로운 타이머 설정
+    debounceTimeoutRef.current = setTimeout(() => {
+      if (searchTerm) {
+        const filteredList = coinInfoList.filter((coin) => {
+          const codeMatch =
+            coin.code && coin.code.toLowerCase().includes(searchTerm.toLowerCase());
+          const nameMatch =
+            marketToKoreanName[coin.code] &&
+            marketToKoreanName[coin.code].toLowerCase().includes(searchTerm.toLowerCase());
+          return codeMatch || nameMatch;
+        });
+        setFilteredCoinList(filteredList);
+        setIsFiltered(true);
+      } else {
+        setFilteredCoinList(coinInfoList);
+        setIsFiltered(false);
+      }
+    }, 500); // 지연 후 필터링
+
+    // 컴포넌트가 언마운트되거나 검색어가 변경될 때 타이머 정리
+    return () => {
+      clearTimeout(debounceTimeoutRef.current);
+    };
+  }, [searchTerm, coinInfoList, marketToKoreanName]);
+
   const handleSearch = () => {
     if (searchTerm) {
       setIsFiltered(true);
@@ -50,7 +87,7 @@ const CoinList = ({ coinInfo }) => {
         <input 
           placeholder='코인명/심볼검색'
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={searchChangeHandler}
         />
         <button onClick={handleSearch}>검색</button>
       </div>
